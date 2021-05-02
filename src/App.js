@@ -1,6 +1,8 @@
+import Namer from './Components/Namer';
+
 function App() {
   return (
-    <p>Juan Quispe</p>
+    <Namer />
   );
 }
 

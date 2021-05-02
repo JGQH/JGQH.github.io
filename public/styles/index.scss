@@ -1,0 +1,13 @@
+@use './utilities' as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    color: getColor(-1)
+}
+
+body {
+    background-color: getColor(0);
+}
