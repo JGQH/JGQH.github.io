@@ -20,7 +20,7 @@ const Letter = ({char, delay}) => {
 const Namer = () => {
     return (
     <> 
-        <div className="section-namer">
+        <div className="port-section section-namer">
             <p>Hi, my name is</p>
             <div className="namer-text" style={{"--duration":DURATION}}>
                 {NAME.split("").map((char, index) => {
