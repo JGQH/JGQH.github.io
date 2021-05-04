@@ -4,7 +4,16 @@
     position: sticky;
     width: 100%;
     top: 0;
-    height: 3rem;
+    height: var(--navbar-height);
+    
+    @include medium {
+        --navbar-height: 4rem;
+        font-size: 2rem;
+    }
+    @include x-large{
+        --navbar-height: 5rem;
+        font-size: 2rem;
+    }
 
     display: flex;
     flex-direction: row;

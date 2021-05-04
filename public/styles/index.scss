@@ -9,6 +9,10 @@
 }
 
 body {
+    --navbar-height: 3rem;
+    .port-section {
+        min-height: 75vh;
+    }
     .port-section:nth-child(2n+2) {
         color: getColor(-1);
         background-color: getColor(-3);
@@ -19,6 +23,8 @@ body {
     }
     .port-section:nth-child(2) {
         color: getColor(-1);
+        min-height: calc(100vh - var(--navbar-height));
         background-color: getColor(0);
     }
+    
 }
