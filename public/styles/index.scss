@@ -9,12 +9,16 @@
 }
 
 body {
-    .port-section:nth-child(2n - 1) {
+    .port-section:nth-child(2n+1) {
         color: getColor(-1);
-        background-color: getColor(0);
+        background-color: getColor(-3);
     }
     .port-section:nth-child(2n) {
         color: getColor(0);
         background-color: getColor(-2);
+    }
+    .port-section:first-child {
+        color: getColor(-1);
+        background-color: getColor(0);
     }
 }

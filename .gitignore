@@ -4,6 +4,9 @@
 *.css
 *.css.map
 
+#SVG
+SVG/
+
 # dependencies
 /node_modules
 /.pnp
