@@ -27,6 +27,7 @@ const Namer = () => {
                     return <Letter key={index} char={char} delay={index} />
                 })}
             </div>
+            <p>and I'm a Front-End developer</p>
         </div>
     </>)
 }

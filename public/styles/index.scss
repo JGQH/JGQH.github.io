@@ -4,6 +4,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -13,6 +15,6 @@ body {
     }
     .port-section:nth-child(2n) {
         color: getColor(0);
-        background-color: getColor(-1);
+        background-color: getColor(-2);
     }
 }

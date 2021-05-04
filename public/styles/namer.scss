@@ -4,22 +4,28 @@
     width: 100%;
     text-align: center;
     padding: {
-        top: 5rem;
-        bottom: 5rem;
-        right: 3rem;
-        left: 3rem;
+        top: 3rem;
+        bottom: 3rem;
+        right: 2rem;
+        left: 2rem;
     }
-    font-family: 'Courier New', Courier, monospace;
-    --font-size: .75rem;
+    
+    --font-size: .8rem;
 
     @include x-small {
         --font-size: 1rem;
+        padding: {
+            top: 5rem;
+            bottom: 5rem;
+            right: 3rem;
+            left: 3rem;
+        }
     }
     @include small{
         --font-size: 2rem;
     }
     @include medium{
-        --font-size: 3rem;
+        --font-size: 2.5rem;
     }
 
     p {
@@ -33,7 +39,6 @@
             font-size: calc(2 * var(--font-size));
 
             color: getColor(-2);
-            text-shadow: 0px 0px 5px getColor(-1);
         }
         
         .namer-intro {
@@ -66,8 +71,8 @@
 
 @keyframes hover-animation {
     0%{
-        text-shadow: 0px 0px 0px getColor(-1);
-        transform: scale(.9, .9);
+        text-shadow: 0px 0px 0px getColor(-3);
+        transform: scale(.75, .75);
     }
     100% {
         text-shadow: 0px 0px 100px getColor(0);
