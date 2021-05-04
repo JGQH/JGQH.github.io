@@ -21,4 +21,3 @@ This project is my portfolio, to show my developer skills.
 ## To-Do
 - Add "My Projects" section
 - Rewrite "About Me" section
-- Add navigation bar
