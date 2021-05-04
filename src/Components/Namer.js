@@ -17,19 +17,18 @@ const Letter = ({char, delay}) => {
     return <h1 style={{"--delay":delay}} className={className} >{char}</h1>
 }
 
-const Namer = () => {
+const Namer = ({reference}) => {
     return (
-    <> 
-        <div className="port-section section-namer">
-            <p>Hi, my name is</p>
-            <div className="namer-text" style={{"--duration":DURATION}}>
-                {NAME.split("").map((char, index) => {
-                    return <Letter key={index} char={char} delay={index} />
-                })}
-            </div>
-            <p>and I'm a Front-End developer</p>
+    <div className="port-section section-namer" ref={reference}>
+        <p>Hi, my name is</p>
+        <div className="namer-text" style={{"--duration":DURATION}}>
+            {NAME.split("").map((char, index) => {
+                return <Letter key={index} char={char} delay={index} />
+            })}
         </div>
-    </>)
+        <p>and I'm a Front-End developer</p>
+    </div>
+    )
 }
 
 export default Namer

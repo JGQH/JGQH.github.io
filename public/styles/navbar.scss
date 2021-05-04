@@ -1,0 +1,31 @@
+@use './utilities' as *;
+
+.port-navbar {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: 3rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: getColor(1);
+
+    .navbar-ref {
+        padding: .5rem;
+        cursor: pointer;
+        color: getColor(-1);
+        border: 2px solid getColor(-1);
+        outline: 2px solid getColor(-1);
+        outline-offset: -2px;
+
+        transition: outline-offset .1s;
+
+        &:hover {
+            outline-offset: 1px;
+            outline: 1px solid getColor(-1);
+        }
+    }
+}

@@ -1,6 +1,6 @@
-const About = () => {
+const About = ({reference}) => {
     return (
-    <div className="port-section section-about">
+    <div className="port-section section-about" ref={reference}>
       <div className="about-title">
         <h1>ABOUT ME</h1>
       </div>

@@ -11,9 +11,9 @@ const Skill = ({skillName}) => {
     )
 }
 
-const Skills = () => {
+const Skills = ({reference}) => {
     return (
-    <div className="port-section section-skills">
+    <div className="port-section section-skills" ref={reference} >
         <div className="skills-title">
             <h1>SKILLS</h1>
         </div>
