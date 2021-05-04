@@ -1,0 +1,41 @@
+.section-skills {
+  display: grid;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  row-gap: 1rem;
+  font-size: 0.75rem;
+}
+@media only screen and (min-width: 360px) {
+  .section-skills {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .section-skills {
+    font-size: 1.5rem;
+    grid-template-columns: 1fr 2fr;
+  }
+  .section-skills .skills-title {
+    grid-column: 1/2;
+  }
+  .section-skills .skills-display {
+    grid-column: 2/3;
+  }
+}
+.section-skills .skills-title {
+  align-self: center;
+  justify-self: center;
+}
+.section-skills .skills-display {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.section-skills .skills-display .skill-display {
+  flex-basis: 25%;
+}/*# sourceMappingURL=skills.css.map */

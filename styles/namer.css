@@ -1,0 +1,99 @@
+.section-namer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column;
+  --font-size: .8rem;
+}
+@media only screen and (min-width: 360px) {
+  .section-namer {
+    --font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .section-namer {
+    --font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .section-namer {
+    --font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .section-namer {
+    --font-size: 4rem;
+  }
+}
+.section-namer p {
+  font-size: var(--font-size);
+}
+.section-namer .namer-text .namer-intro, .section-namer .namer-text .namer-movement {
+  display: inline-block;
+  cursor: default;
+  font-size: calc(2 * var(--font-size));
+  color: #04d0c1;
+}
+.section-namer .namer-text .namer-intro {
+  opacity: 0;
+  -webkit-animation: intro-animation calc(var(--duration) * 1ms) ease-out forwards;
+          animation: intro-animation calc(var(--duration) * 1ms) ease-out forwards;
+  -webkit-animation-delay: calc(var(--delay) * 200ms);
+          animation-delay: calc(var(--delay) * 200ms);
+}
+.section-namer .namer-text .namer-movement:hover {
+  -webkit-animation: hover-animation 1s ease-out infinite;
+          animation: hover-animation 1s ease-out infinite;
+}
+
+@-webkit-keyframes intro-animation {
+  0% {
+    transform: translateY(2rem);
+  }
+  60% {
+    transform: translateY(-1rem);
+  }
+  80% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+@keyframes intro-animation {
+  0% {
+    transform: translateY(2rem);
+  }
+  60% {
+    transform: translateY(-1rem);
+  }
+  80% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
+}
+@-webkit-keyframes hover-animation {
+  0% {
+    text-shadow: 0px 0px 0px #45A29E;
+    transform: scale(0.75, 0.75);
+  }
+  100% {
+    text-shadow: 0px 0px 100px #0B0C10;
+    transform: none;
+  }
+}
+@keyframes hover-animation {
+  0% {
+    text-shadow: 0px 0px 0px #45A29E;
+    transform: scale(0.75, 0.75);
+  }
+  100% {
+    text-shadow: 0px 0px 100px #0B0C10;
+    transform: none;
+  }
+}/*# sourceMappingURL=namer.css.map */
