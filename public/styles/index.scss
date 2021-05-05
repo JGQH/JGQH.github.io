@@ -10,21 +10,17 @@
 
 body {
     --navbar-height: 3rem;
-    .port-section {
-        min-height: 75vh;
-    }
-    .port-section:nth-child(2n+2) {
-        color: getColor(-1);
-        background-color: getColor(-3);
-    }
-    .port-section:nth-child(2n+1) {
-        color: getColor(0);
-        background-color: getColor(-2);
-    }
     .port-section:nth-child(2) {
         color: getColor(-1);
         min-height: calc(100vh - var(--navbar-height));
         background-color: getColor(0);
     }
-    
+    .port-section:nth-child(n+3) {
+        min-height: 75vh;
+        box-shadow:
+            inset 0px 5px 5px -5px getColor(-2),
+            inset 0px -5px 5px -5px getColor(-2); 
+        color: getColor(-1);
+        background-color: getColor(1);
+    }
 }
