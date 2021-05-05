@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
-import Namer from './Components/Namer';
-import About from './Components/About';
-import Skills from './Components/Skills';
-import Navbar from './Components/Navbar';
+import Namer from './Sections/Namer';
+import About from './Sections/About';
+import Skills from './Sections/Skills';
+import Navbar from './Sections/Navbar';
 
 function App() {
   const [namer, about, skills] = [useRef(null), useRef(null), useRef(null)]
