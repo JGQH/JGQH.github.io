@@ -2,8 +2,18 @@ import Project from './../Components/Project';
 
 const PROJECTS_LIST = [
     {
+        title: "Portfolio",
+        description: "Showcase of my developer skills",
+        technologies: ["HTML", "SASS", "React JS"],
+        repo: "https://github.com/JGQH/JGQH.github.io",
+        live: "https://jgqh.github.io/"
+    },
+    {
         title: "Scheduler JS",
-        description: "Automatic schedule generator, oriented to my university."
+        description: "Automatic schedule generator, oriented to my university.",
+        technologies: ["HTML", "SASS", "React JS"],
+        repo: "https://github.com/JGQH/Schedule-JS",
+        live: "https://jgqh.github.io/Schedule-JS/"
     }
 ];
 

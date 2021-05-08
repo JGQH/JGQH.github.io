@@ -1,0 +1,53 @@
+@use './utilities' as *;
+
+.project-popup {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    background: #{getColor(0)}AA;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+
+    .project-box {
+        width: 50%;
+        justify-self: center;
+        align-self: center;
+
+        .project-title {
+            padding: 1rem;
+            text-align: center;
+            border-radius: 1rem 1rem 0 0;
+            background-color: getColor(0);
+            color: getColor(-2);
+        }
+
+        .project-content {
+            padding: 1rem;
+            border-radius: 0 0 1rem 1rem;
+            background-color: getColor(0);
+
+            .project-buttons {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-evenly;
+
+                .project-btn {
+                    cursor: pointer;
+                    padding: 1rem;
+                    border: 1px solid getColor(-1);
+                    border-radius: .5rem;
+                    transition: all .25s;
+
+                    &:hover {
+                        background-color: getColor(-1);
+                        color: getColor(0);
+                    }
+                }
+            }
+        }
+    }
+}
