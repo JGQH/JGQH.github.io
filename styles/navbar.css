@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #1F2833;
+  background-color: #0B0C10;
 }
 @media only screen and (min-width: 768px) {
   .port-navbar {

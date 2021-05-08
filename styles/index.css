@@ -8,19 +8,14 @@
 body {
   --navbar-height: 3rem;
 }
-body .port-section {
-  min-height: 75vh;
-}
-body .port-section:nth-child(2n+2) {
-  color: #C5C6C7;
-  background-color: #45A29E;
-}
-body .port-section:nth-child(2n+1) {
-  color: #0B0C10;
-  background-color: #04d0c1;
-}
 body .port-section:nth-child(2) {
   color: #C5C6C7;
   min-height: calc(100vh - var(--navbar-height));
   background-color: #0B0C10;
+}
+body .port-section:nth-child(n+3) {
+  min-height: 75vh;
+  box-shadow: inset 0px 5px 5px -5px #04d0c1, inset 0px -5px 5px -5px #04d0c1;
+  color: #C5C6C7;
+  background-color: #1F2833;
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,64 @@
+@use './utilities' as *;
+
+.section-projects {
+    display: grid;
+
+    padding: {
+        top: 2rem;
+        bottom: 2rem;
+        right: 3rem;
+        left: 3rem;
+    }
+
+    --font-size: .75rem;
+    font-size: var(--font-size);
+
+    @include x-small {
+        --font-size: 1rem;
+    }
+
+    @include medium {
+        --font-size: 1.5rem;
+    }
+
+    .projects-title {
+        text-align: center;
+    }
+
+    .projects-display {
+        font-size: calc(75% * var(--font-size));
+
+        display: grid;
+        row-gap: 2rem;
+
+        .project-display {
+            cursor: pointer;
+            justify-self: center;
+            padding: 1rem;
+            width: 100%;
+            @include x-large{
+                width: 75%;
+            }
+
+            border-radius: 1rem;
+            background-color: getColor(0);
+            box-shadow: 1rem 1rem .5rem getColor(0);
+
+            .project-title {
+                color: getColor(-2);
+            }
+
+            .project-separator {
+                border: 1px solid getColor(-2);
+                box-shadow: 0 0 5px getColor(-2);
+            }
+
+            transition: all .5s;
+
+            &:hover {
+                transform: scale(.95, .95);
+                box-shadow: .75rem .75rem .5rem getColor(-3);
+            }
+        }
+    }
+}
