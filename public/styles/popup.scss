@@ -13,39 +13,58 @@
     display: grid;
 
     .project-box {
-        width: 50%;
+        width: 90%;
+        @include small {
+            width: 50%;
+        }
         justify-self: center;
         align-self: center;
 
-        .project-title {
+        .project-content {
             padding: 1rem;
+            background-color: getColor(0);
+
+            &:first-child {
+                border-radius: 1rem 1rem 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 1rem 1rem;
+            }
+        }
+
+        .project-title {
             text-align: center;
-            border-radius: 1rem 1rem 0 0;
             background-color: getColor(0);
             color: getColor(-2);
         }
 
-        .project-content {
-            padding: 1rem;
-            border-radius: 0 0 1rem 1rem;
-            background-color: getColor(0);
+        .project-technologies {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
 
-            .project-buttons {
-                display: flex;
-                flex-flow: row;
-                justify-content: space-evenly;
+            img {
+                width: 3em;
+            }
+        }
 
-                .project-btn {
-                    cursor: pointer;
-                    padding: 1rem;
-                    border: 1px solid getColor(-1);
-                    border-radius: .5rem;
-                    transition: all .25s;
+        .project-buttons {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-evenly;
 
-                    &:hover {
-                        background-color: getColor(-1);
-                        color: getColor(0);
-                    }
+            .project-btn {
+                cursor: pointer;
+                padding: 1rem;
+                border: 1px solid getColor(-1);
+                border-radius: .5rem;
+                transition: all .25s;
+
+                &:hover {
+                    background-color: getColor(-1);
+                    color: getColor(0);
                 }
             }
         }
