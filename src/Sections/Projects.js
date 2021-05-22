@@ -14,6 +14,13 @@ const PROJECTS_LIST = [
         technologies: ["HTML", "SASS", "React JS"],
         repo: "https://github.com/JGQH/Schedule-JS",
         live: "https://jgqh.github.io/Schedule-JS/"
+    },
+    {
+        title: "YGO Decks Prices",
+        description: "Price calculator using a Node JS REST API.",
+        technologies: ["HTML", "SASS", "React JS", "Node JS", "Mongo DB"],
+        repo: "https://github.com/JGQH/ygo-decks-prices",
+        live: "https://ygodp.netlify.app/"
     }
 ];
 

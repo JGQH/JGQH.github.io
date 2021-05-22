@@ -12,6 +12,8 @@ const Skills = ({reference}) => {
             <Skill skillName="SASS" />
             <Skill skillName="JavaScript" />
             <Skill skillName="React JS" />
+            <Skill skillName="Node JS" />
+            <Skill skillName="Mongo DB" />
         </div>
     </div>)
 }

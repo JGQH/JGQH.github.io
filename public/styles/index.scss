@@ -18,8 +18,8 @@ body {
     .port-section:nth-child(n+3) {
         min-height: 75vh;
         box-shadow:
-            inset 0px 5px 5px -5px getColor(-2),
-            inset 0px -5px 5px -5px getColor(-2); 
+            inset 0px 7px 7px -7px getColor(0),
+            inset 0px -7px 7px -7px getColor(0); 
         color: getColor(-1);
         background-color: getColor(1);
     }
