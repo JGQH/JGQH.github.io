@@ -15,7 +15,7 @@ body .port-section:nth-child(2) {
 }
 body .port-section:nth-child(n+3) {
   min-height: 75vh;
-  box-shadow: inset 0px 5px 5px -5px #04d0c1, inset 0px -5px 5px -5px #04d0c1;
+  box-shadow: inset 0px 7px 7px -7px #0B0C10, inset 0px -7px 7px -7px #0B0C10;
   color: #C5C6C7;
   background-color: #1F2833;
 }/*# sourceMappingURL=index.css.map */

@@ -1,13 +1,19 @@
 .port-navbar {
   position: sticky;
   width: 100%;
+  overflow-x: auto;
   top: 0;
   height: var(--navbar-height);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   background-color: #0B0C10;
+}
+@media only screen and (min-width: 360px) {
+  .port-navbar {
+    justify-content: space-around;
+  }
 }
 @media only screen and (min-width: 768px) {
   .port-navbar {
