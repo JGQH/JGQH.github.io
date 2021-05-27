@@ -2,25 +2,25 @@ import Project from './../Components/Project';
 
 const PROJECTS_LIST = [
     {
-        title: "Portfolio",
-        description: "Showcase of my developer skills",
-        technologies: ["HTML", "SASS", "React JS"],
-        repo: "https://github.com/JGQH/JGQH.github.io",
-        live: "https://jgqh.github.io/"
+        name: "YGO Decks Prices",
+        description: "Price calculator for YDK files using a Node JS REST API.",
+        technologies: ["HTML", "SASS", "React JS", "Node JS", "Mongo DB"],
+        repo: "https://github.com/JGQH/ygo-decks-prices",
+        live: "https://ygodp.netlify.app/"
     },
     {
-        title: "Scheduler JS",
+        name: "Scheduler JS",
         description: "Automatic schedule generator, oriented to my university.",
         technologies: ["HTML", "SASS", "React JS"],
         repo: "https://github.com/JGQH/Schedule-JS",
         live: "https://jgqh.github.io/Schedule-JS/"
     },
     {
-        title: "YGO Decks Prices",
-        description: "Price calculator using a Node JS REST API.",
-        technologies: ["HTML", "SASS", "React JS", "Node JS", "Mongo DB"],
-        repo: "https://github.com/JGQH/ygo-decks-prices",
-        live: "https://ygodp.netlify.app/"
+        name: "Portfolio",
+        description: "Showcase of my developer skills",
+        technologies: ["HTML", "SASS", "React JS"],
+        repo: "https://github.com/JGQH/JGQH.github.io",
+        live: "https://jgqh.github.io/"
     }
 ];
 

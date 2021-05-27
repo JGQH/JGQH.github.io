@@ -4,8 +4,9 @@
 *.css
 *.css.map
 
-#SVG
+#Images
 SVG/
+Images/
 
 # dependencies
 /node_modules
