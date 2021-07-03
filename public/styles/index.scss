@@ -10,17 +10,23 @@
 
 body {
     --navbar-height: 3rem;
-    .port-section:nth-child(2) {
-        color: getColor(-1);
-        min-height: calc(100vh - var(--navbar-height));
-        background-color: getColor(0);
-    }
-    .port-section:nth-child(n+3) {
+
+    .port-section {
         min-height: 75vh;
         box-shadow:
             inset 0px 7px 7px -7px getColor(0),
             inset 0px -7px 7px -7px getColor(0); 
         color: getColor(-1);
         background-color: getColor(1);
+    }
+
+    .port-section.section-namer {
+        color: getColor(-1);
+        min-height: calc(100vh - var(--navbar-height));
+        background-color: getColor(0);
+    }
+    .port-section.section-contact {
+        color: getColor(-1);
+        background-color: getColor(0);
     }
 }
