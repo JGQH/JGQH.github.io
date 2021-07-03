@@ -1,7 +1,8 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
 function isValidEmail(email) {
-    return email.match(/^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9.-]+).([a-z.]{2,6})$/)
+    const pattern = /^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9.-]+).([a-z.]{2,6})$/
+    return email.match(pattern)
 }
 
 function isValidText(text = "") {
@@ -10,7 +11,7 @@ function isValidText(text = "") {
 
 async function fetchSubmit(name, email, msg) {
     try {
-        const response = await fetch(process.env.REACT_APP_SMTP, {
+        const response = await fetch(import.meta.env.VITE_SMTP, {
             method: "POST",
             body: JSON.stringify({
                 name: name,

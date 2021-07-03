@@ -1,9 +1,11 @@
+import React from "react";
+
 const Project = params => {
     const { name, description, technologies, repo, live } = params;
     return (
     <div className="project-container">
         <div className="project-image">
-            <img src={require(`./../Images/${name}.png`).default} alt={`View of ${name}`}/>
+            <img src={`/src/Images/${name}.png`} alt={`View of ${name}`}/>
         </div>
         <div className="project-name project-block">
             <h1>{name}</h1>
@@ -13,7 +15,7 @@ const Project = params => {
         </div>
         <div className="project-technologies project-block">
             {technologies.map((technology, i) => (
-                <img key={i} src={require(`./../SVG/${technology}.svg`).default} alt={technology}/>
+                <img key={i} src={`/src/SVG/${technology}.svg`} alt={technology}/>
             ))}
         </div>
         <div className="project-buttons">

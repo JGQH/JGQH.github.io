@@ -1,4 +1,5 @@
-import Navref from './../Components/Navref';
+import React from 'react';
+import Navref from '../Components/Navref';
 
 const Navbar = ({references, names}) => {
     return (

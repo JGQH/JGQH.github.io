@@ -1,4 +1,5 @@
-import Project from './../Components/Project';
+import React from 'react';
+import Project from '../Components/Project';
 
 const PROJECTS_LIST = [
     {

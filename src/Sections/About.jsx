@@ -1,3 +1,5 @@
+import React from "react";
+
 const About = ({reference}) => {
     return (
     <div className="port-section section-about" ref={reference}>
