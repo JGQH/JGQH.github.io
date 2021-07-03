@@ -1,7 +1,4 @@
-import React from 'react';
-import Project from '../Components/Project';
-
-const PROJECTS_LIST = [
+const ProjectsList = [
     {
         name: "3D Game of Life",
         description: "3D simulation of Conway's Game of Life, built using ThreeJS (Along with its utility library Drei) ",
@@ -32,18 +29,4 @@ const PROJECTS_LIST = [
     }
 ]
 
-const Projects = ({reference}) => {
-    return (
-    <div className="port-section section-projects" ref={reference}>
-        <div className="projects-title">
-            <h1>PROJECTS</h1>
-        </div>
-        <div className="projects-display">
-            {PROJECTS_LIST.map((proj, i) => (
-                <Project key={i} {...proj} />
-            ))}
-        </div>
-    </div>)
-}
-
-export default Projects
+export default ProjectsList

@@ -1,5 +1,6 @@
 import React from 'react'
-import Skill from '../Components/Skill'
+import Skill from './Skill'
+import './skills.scss'
 
 const Skills = ({reference}) => {
     return (

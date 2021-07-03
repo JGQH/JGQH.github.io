@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import './namer.scss'
 
 const NAME = "JUAN⠀QUISPE"
 const DURATION = 1000; //MiliSeconds
