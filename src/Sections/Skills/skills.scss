@@ -11,13 +11,9 @@
     }
     row-gap: 1rem;
 
-    font-size: .75rem;
-    @include x-small {
-        font-size: 1rem;
-    }
+    @include fontResizer;
+    
     @include medium {
-        font-size: 1.5rem;
-
         grid-template-columns: 1fr 2fr;
         .skills-title {
             grid-column: 1 / 2;

@@ -1,0 +1,106 @@
+@use 'src/utilities' as *;
+
+.section-contact {
+    display: grid;
+
+    padding: {
+        top: 2rem;
+        bottom: 2rem;
+        right: 3rem;
+        left: 3rem;
+    }
+
+    @include medium {
+        grid-template-areas:
+        "title title"
+        "form  message";
+
+        .contact-title {
+            grid-area: title;
+        }
+
+        .contact-message {
+            grid-area: message;
+        }
+
+        .contact-form {
+            grid-area: form;
+        }
+    }
+
+    @include fontResizer;
+
+    .contact-title {
+        justify-self: center;
+        align-self: center;
+    }
+    
+    .contact-message {
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .contact-form {
+        justify-self: center;
+        align-self: center;
+
+        .form-name, .form-email, .form-message {
+            border-radius: .5rem;
+            padding: .5rem;
+        
+            input, textarea{
+                transition: all .25s;
+                background-color: getColor(1);
+                color: getColor(-1);
+                
+                border: none;
+                outline: none;
+                width: 100%;
+                border-radius: .5rem;
+                font-size: 1.1em;
+                padding: .5rem;
+
+                &:disabled {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .form-button {
+            text-align: center;
+
+            button {
+                cursor: pointer;
+                font-size: 1.2em;
+                border: 1px solid getColor(-1);
+                border-radius: .5rem;
+                padding: .75rem;
+                background-color: getColor(0);
+                color: getColor(-1);
+                transition: all .25s;
+
+                &:hover {
+                    background-color: getColor(-1);
+                    color: getColor(0);
+                }
+
+                &:disabled {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .field-ok {
+            input, textarea {
+                border: 1px solid getColor(-1);
+            }
+        }
+
+        .field-error {
+            input, textarea {
+                border: 1px solid #F03;
+            }
+        }
+    }
+}
