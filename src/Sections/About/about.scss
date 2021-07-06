@@ -33,4 +33,8 @@
         justify-self: center;
         align-self: center;
     }
+
+    .about-content p:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 }

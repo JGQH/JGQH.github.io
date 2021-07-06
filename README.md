@@ -19,4 +19,5 @@ This project is my portfolio, to show my developer skills.
 \* *No images yet* \*
 
 ## To-Do
-- Rewrite "About Me" section
+- Replace image of the projects
+- Add new projects
