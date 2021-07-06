@@ -1,10 +1,11 @@
 import React from "react"
+import StackSvg from '@StackSvg'
 
 const Skill = ({skillName}) => {
     return (
         <div className="skill-display">
             <div className="skill-img">
-                <img src={`./src/SVG/${skillName}.svg`} alt={skillName}/>
+                <StackSvg name={skillName} />
             </div>
             <div className="skill-name">
                 {skillName}

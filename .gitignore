@@ -1,9 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-#SASS Compiler
-*.css
-*.css.map
-
 #Images
 SVG/
 Images/
@@ -17,7 +13,7 @@ Images/
 /coverage
 
 # production
-/build
+/dist
 
 # misc
 .DS_Store
