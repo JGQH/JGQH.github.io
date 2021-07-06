@@ -13,7 +13,8 @@
     @include medium {
         grid-template-areas:
         "title title"
-        "form  message";
+        "form  message"
+        "form  media";
 
         .contact-title {
             grid-area: title;
@@ -21,10 +22,15 @@
 
         .contact-message {
             grid-area: message;
+            align-self: flex-end;
         }
 
         .contact-form {
             grid-area: form;
+        }
+
+        .contact-media {
+            grid-area: media;
         }
     }
 
@@ -38,7 +44,20 @@
     .contact-message {
         text-align: center;
         justify-self: center;
+    }
+
+    .contact-media {
+        justify-self: center;
         align-self: center;
+
+        .stack-svg {
+            cursor: pointer;
+            transition: all .25s;
+
+            &:hover {
+                filter: brightness(1.25);
+            }
+        }
     }
 
     .contact-form {

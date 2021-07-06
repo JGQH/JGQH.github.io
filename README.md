@@ -20,4 +20,3 @@ This project is my portfolio, to show my developer skills.
 
 ## To-Do
 - Rewrite "About Me" section
-- Add social media

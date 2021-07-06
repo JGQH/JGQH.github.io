@@ -1,6 +1,9 @@
 import React from "react"
 import ContactForm from "./ContactForm"
+import StackSvg from '@StackSvg'
 import './contact.scss'
+
+const GithubProfile = "https://github.com/JGQH"
 
 const Contact = ({reference}) => {
     return (
@@ -12,6 +15,9 @@ const Contact = ({reference}) => {
             <p>Want to work together? Send me a message!</p>
         </div>
         <ContactForm />
+        <div className="contact-media">
+            <StackSvg name="Github" onClick={() => window.open(GithubProfile, "_blank")} />
+        </div>
     </div>)
 }
 

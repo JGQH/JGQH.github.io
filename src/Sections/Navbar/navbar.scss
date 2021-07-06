@@ -9,10 +9,15 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
 
-    @include x-small {
+    @media only screen and (max-width: 599px) {
+        justify-content: flex-start;
+        .navbar-ref:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+    @include small {
         justify-content: space-around;
     }
     @include medium {
@@ -21,7 +26,6 @@
     }
     @include x-large{
         --navbar-height: 5rem;
-        font-size: 2rem;
     }
 
     background-color: getColor(0);
