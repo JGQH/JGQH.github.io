@@ -13,11 +13,10 @@ Simple portfolio website
 This project is my portfolio, to show my developer skills.
 
 ## Technologies
-- NodeJS v16.0.0
+- NodeJS v16.4.2
 
 ## Illustrations
-\* *No images yet* \*
+![Portfolio](./public/Images/Portfolio.png)
 
 ## To-Do
-- Replace image of the projects
 - Add new projects
