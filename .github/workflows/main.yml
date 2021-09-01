@@ -23,7 +23,8 @@ jobs:
           npm install
           npm run-script build
         env:
-          VITE_SMTP: ${{ secrets.VITE_SMTP }}
+          VITE_SMTP_URL: ${{ secrets.VITE_SMTP_URL }}
+          VITE_SMTP_ID: ${{ secrets.VITE_SMTP_ID }}
 
       # Deploy to Github Pages
       - name: Deploy

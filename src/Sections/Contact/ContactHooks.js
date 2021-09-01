@@ -1,4 +1,4 @@
-import { useState, useReducer } from 'react'
+import { useState } from 'react'
 
 /* VALIDATION HOOKS */
 function useValidator(validatorFunction, initialValue) {
@@ -32,27 +32,30 @@ export function useTextValidator() {
 
 /* SUBMITION HOOKS */
 export function useSubmitter() {
-    const [state, setState] = useState("IDLE");
+    const [state, setState] = useState('IDLE');
 
     async function doSubmit(name, email, message) {
-        setState("LOADING")
+        setState('LOADING')
 
         try {
-            const response = await fetch(import.meta.env.VITE_SMTP, {
+            const response = await fetch(import.meta.env.VITE_SMTP_URL, {
                 method: "POST",
                 body: JSON.stringify({
+                    id: import.meta.env.VITE_SMTP_ID,
                     name: name,
                     email: email,
                     message: message
                 }),
-                headers: {"Content-type": "application/json; charset=UTF-8"}
+                headers: {'Content-type': 'application/json; charset=UTF-8'}
             })
     
             const data = await response.json()
 
-            setState(data["success"] ? "DONE" : "ERROR")
+            if(!data['success']) throw new Error()
+
+            setState('DONE')
         } catch (error) {
-            setState("ERROR")
+            setState('ERROR')
         }
     }
 
