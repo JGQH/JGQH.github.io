@@ -17,12 +17,16 @@
     "jsx": "react",
     "baseUrl": "./src/",
     "paths": {
+      "@Types":[
+        "Types/types"
+      ],
       "@Sections/*":[
         "Sections/Navbar/*",
         "Sections/Namer/*",
         "Sections/About/*",
         "Sections/Skills/*",
-        "Sections/Projects/*"
+        "Sections/Projects/*",
+        "Sections/Contact/*"
       ],
       "@Hooks/*":[
         "Hooks/*"

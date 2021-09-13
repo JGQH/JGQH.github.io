@@ -1,7 +1,9 @@
-interface ProjectObject {
+import { StackName } from '@Types'
+
+export interface ProjectObject {
   name: string
   description: string
-  technologies: string[]
+  technologies: StackName[]
   repo: string
   live: string
 }

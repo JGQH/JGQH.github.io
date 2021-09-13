@@ -1,8 +1,9 @@
 import React from 'react'
 import StackSvg from '@Components/StackSvg'
+import { StackName } from '@Types'
 
 interface SkillProps {
-  skillName: string
+  skillName: StackName
 }
 
 export default function Skill ({ skillName }:SkillProps) {

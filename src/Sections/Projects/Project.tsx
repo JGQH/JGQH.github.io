@@ -1,15 +1,8 @@
 import React from 'react'
 import StackSvg from '@Components/StackSvg'
+import { ProjectObject } from './ProjectList'
 
-interface ProjectProps {
-  name: string
-  description: string
-  technologies: string[]
-  repo: string
-  live: string
-}
-
-export default function Project ({ name, description, technologies, repo, live }:ProjectProps) {
+export default function Project({ name, description, technologies, repo, live }:ProjectObject) {
   return (
     <div className='project-container'>
       <div className='project-image'>

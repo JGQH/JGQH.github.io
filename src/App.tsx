@@ -7,7 +7,7 @@ import Namer from '@Sections/Namer'
 import About from '@Sections/About'
 import Skills from '@Sections/Skills'
 import Projects from '@Sections/Projects'
-import Contact from './Sections/Contact/Contact'
+import Contact from '@Sections/Contact'
 
 export default function App() {
   const [namer, about, skills, projects, contact] = [useDivRef(), useDivRef(), useDivRef(), useDivRef(), useDivRef()]
