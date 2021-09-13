@@ -1,114 +1,101 @@
 @use 'src/utilities' as *;
 
 .section-projects {
+  display: grid;
+
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
+    right: 3rem;
+    left: 3rem;
+  }
+
+  @include fontResizer;
+
+  .projects-title {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .projects-display {
+    font-size: 0.75em;
     display: grid;
+    row-gap: 2rem;
 
-    padding: {
-        top: 2rem;
-        bottom: 2rem;
-        right: 3rem;
-        left: 3rem;
-    }
+    .project-container {
+      width: 100%;
+      justify-self: center;
+      display: grid;
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: getColor(0);
+      box-shadow: 1rem 1rem 0.5rem getColor(0);
 
-    @include fontResizer;
+      @include x-large {
+        width: 75%;
+      }
 
-    .projects-title {
-        text-align: center;
-        margin-bottom: 1em;
-    }
+      .project-block {
+        padding: 0.5rem;
+      }
 
-    .projects-display {
-        font-size: 0.75em;
+      .project-image {
         display: grid;
-        row-gap: 2rem;
 
-        .project-container {
-            width: 100%;
-            justify-self: center;
-            display: grid;
-            padding: 1rem;
-            border-radius: 1rem;
-            background-color: getColor(0);
-            box-shadow: 1rem 1rem 0.5rem getColor(0);
-
-            @include x-large {
-                width: 75%;
-            }
-
-            .project-block {
-                padding: 0.5rem;
-            }
-
-            .project-image {
-                display: grid;
-
-                img {
-                    align-self: center;
-                    justify-self: center;
-                    max-width: 90%;
-                    border-radius: 1em;
-                }
-            }
-
-            .project-name {
-                text-align: center;
-                color: getColor(-2);
-            }
-
-            .project-description {
-                text-align: center;
-            }
-
-            .project-technologies {
-                display: flex;
-                flex-flow: row;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
-            }
-
-            .project-buttons {
-                display: flex;
-                flex-flow: row;
-                justify-content: space-evenly;
-
-                .project-redirect {
-                    cursor: pointer;
-                    padding: 1rem;
-                    border: 1px solid getColor(-1);
-                    border-radius: 0.5rem;
-                    transition: all 0.25s;
-
-                    &:hover {
-                        background-color: getColor(-1);
-                        color: getColor(0);
-                    }
-                }
-            }
-
-            @media (min-width: 768px), (max-width: 768px) and (orientation: landscape) {
-                grid-template-columns: 2fr 3fr;
-                grid-template-areas:
-                "image title"
-                "image description"
-                "image technologies"
-                "image buttons";
-
-                .project-image {
-                    grid-area: image;
-                }
-                .project-title {
-                    grid-area: title;
-                }
-                .project-description {
-                    grid-area: description;
-                }
-                .project-technologies {
-                    grid-area: technologies;
-                }
-                .project-buttons {
-                    grid-area: buttons;
-                }
-              }
+        img {
+          align-self: center;
+          justify-self: center;
+          max-width: 90%;
+          border-radius: 1em;
         }
+      }
+
+      .project-name {
+        text-align: center;
+        color: getColor(-2);
+      }
+
+      .project-description {
+        text-align: center;
+      }
+
+      .project-technologies {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .project-buttons {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+      }
+
+      @media (min-width: 768px), (max-width: 768px) and (orientation: landscape) {
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas:
+        "image title"
+        "image description"
+        "image technologies"
+        "image buttons";
+
+        .project-image {
+            grid-area: image;
+        }
+        .project-title {
+            grid-area: title;
+        }
+        .project-description {
+            grid-area: description;
+        }
+        .project-technologies {
+            grid-area: technologies;
+        }
+        .project-buttons {
+            grid-area: buttons;
+        }
+      }
     }
+  }
 }

@@ -1,0 +1,24 @@
+@use 'src/utilities' as *;
+
+.component-jbutton {
+  cursor: pointer;
+  font-size: 1em;
+
+  color: getColor(-1);
+  background-color: getColor(0);
+
+  border: 1px solid getColor(-1);
+  border-radius: .5rem;
+
+  padding: 1rem;
+  transition: all .25s;
+
+  &:hover {
+    background-color: getColor(-1);
+    color: getColor(0);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

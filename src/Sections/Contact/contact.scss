@@ -1,125 +1,105 @@
 @use 'src/utilities' as *;
 
 .section-contact {
-    display: grid;
+  display: grid;
 
-    padding: {
-        top: 2rem;
-        bottom: 2rem;
-        right: 3rem;
-        left: 3rem;
-    }
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
+    right: 3rem;
+    left: 3rem;
+  }
 
-    @include medium {
-        grid-template-areas:
-        "title title"
-        "form  message"
-        "form  media";
-
-        .contact-title {
-            grid-area: title;
-        }
-
-        .contact-message {
-            grid-area: message;
-            align-self: flex-end;
-        }
-
-        .contact-form {
-            grid-area: form;
-        }
-
-        .contact-media {
-            grid-area: media;
-        }
-    }
-
-    @include fontResizer;
+  @include medium {
+    grid-template-areas:
+    "title title"
+    "form  message"
+    "form  media";
 
     .contact-title {
-        justify-self: center;
-        align-self: center;
+      grid-area: title;
     }
-    
+
     .contact-message {
-        text-align: center;
-        justify-self: center;
-    }
-
-    .contact-media {
-        justify-self: center;
-        align-self: center;
-
-        .stack-svg {
-            cursor: pointer;
-            transition: all .25s;
-
-            &:hover {
-                filter: brightness(1.25);
-            }
-        }
+      grid-area: message;
+      align-self: flex-end;
     }
 
     .contact-form {
-        justify-self: center;
-        align-self: center;
+      grid-area: form;
+    }
 
-        .form-name, .form-email, .form-message {
-            border-radius: .5rem;
-            padding: .5rem;
+    .contact-media {
+      grid-area: media;
+    }
+  }
+
+  @include fontResizer;
+
+  .contact-title {
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .contact-message {
+    text-align: center;
+    justify-self: center;
+  }
+
+  .contact-media {
+    justify-self: center;
+    align-self: center;
+
+    .stack-svg {
+      cursor: pointer;
+      transition: all .25s;
+
+      &:hover {
+        filter: brightness(1.25);
+      }
+    }
+  }
+
+  .contact-form {
+    justify-self: center;
+    align-self: center;
+
+    .form-name, .form-email, .form-message {
+      border-radius: .5rem;
+      padding: .5rem;
+  
+      input, textarea{
+        transition: all .25s;
+        background-color: getColor(1);
+        color: getColor(-1);
         
-            input, textarea{
-                transition: all .25s;
-                background-color: getColor(1);
-                color: getColor(-1);
-                
-                border: none;
-                outline: none;
-                width: 100%;
-                border-radius: .5rem;
-                font-size: 1.1em;
-                padding: .5rem;
+        border: none;
+        outline: none;
+        width: 100%;
+        border-radius: .5rem;
+        font-size: 1.1em;
+        padding: .5rem;
 
-                &:disabled {
-                    cursor: not-allowed;
-                }
-            }
+        &:disabled {
+          cursor: not-allowed;
         }
+      }
+    }
 
-        .form-button {
-            text-align: center;
+    .form-button {
+        text-align: center;
+    }
 
-            button {
-                cursor: pointer;
-                font-size: 1.2em;
-                border: 1px solid getColor(-1);
-                border-radius: .5rem;
-                padding: .75rem;
-                background-color: getColor(0);
-                color: getColor(-1);
-                transition: all .25s;
-
-                &:hover {
-                    background-color: getColor(-1);
-                    color: getColor(0);
-                }
-
-                &:disabled {
-                    cursor: not-allowed;
-                }
-            }
-        }
-
-        .field-ok {
-            input, textarea {
-                border: 1px solid getColor(-1);
-            }
-        }
-
-        .field-error {
-            input, textarea {
-                border: 1px solid #F03;
-            }
+    .field-ok {
+        input, textarea {
+            border: 1px solid getColor(-1);
         }
     }
+
+    .field-error {
+        input, textarea {
+            border: 1px solid #F03;
+        }
+    }
+  }
 }
