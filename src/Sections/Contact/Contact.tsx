@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactForm from "./ContactForm"
 import StackSvg from '@Components/StackSvg'
-import { SectionProps } from '@Hooks/useDivRef'
+import type { SectionProps } from '@Hooks/useDivRef'
 import './contact.scss'
 
 const GithubProfile = 'https://github.com/JGQH'

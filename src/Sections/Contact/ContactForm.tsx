@@ -1,8 +1,9 @@
 import React from 'react'
-import { useEmailValidator, useTextValidator, useSubmitter, TriBool } from './ContactHooks'
+import { useEmailValidator, useTextValidator, useSubmitter, TriBool } from '@Hooks/useValidators'
+import JButton from 'Components/JButton/JButton'
 
 function getClassName(tribool:TriBool) {
-    return (tribool === undefined) ? '' : (tribool ? 'field-ok' : 'field-error')
+  return (tribool === 'unknown') ? '' : (tribool ? 'field-ok' : 'field-error')
 }
 
 export default function ContactForm() {
@@ -11,6 +12,8 @@ export default function ContactForm() {
   const [email, isEmailValid, setEmail] = useEmailValidator()
   const [message, isMessageValid, setMessage] = useTextValidator()
 
+  const submitDisabled = (state === 'DONE') || !(isEmailValid && isNameValid && isMessageValid)
+  
   return (
     <form onSubmit={e => e.preventDefault()} className='contact-form'>
       <div className={`form-name ${getClassName(isNameValid)}`}>
@@ -31,7 +34,7 @@ export default function ContactForm() {
           <p>Submitting...</p>}
       </div>
       <div className='form-button'>
-        <button onClick={() => doSubmit(name, email, message)} disabled={(state === 'DONE') || !(isEmailValid && isNameValid && isMessageValid)}>Submit</button>
+        <JButton onClick={() => doSubmit(name, email, message)} disabled={submitDisabled}>Submit</JButton>
       </div>
     </form>
   )

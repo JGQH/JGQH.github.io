@@ -1,6 +1,7 @@
 import React from 'react'
 import StackSvg from '@Components/StackSvg'
 import { ProjectObject } from './ProjectList'
+import JButton from 'Components/JButton/JButton'
 
 export default function Project({ name, description, technologies, repo, live }:ProjectObject) {
   return (
@@ -20,12 +21,8 @@ export default function Project({ name, description, technologies, repo, live }:
         ))}
       </div>
       <div className='project-buttons'>
-        <div className='project-redirect' onClick={() => window.open(repo, '_blank')}>
-          <p>View Repo</p>
-        </div>
-        <div className='project-redirect' onClick={() => window.open(live, '_blank')}>
-          <p>View Live</p>
-        </div>
+        <JButton onClick={() => window.open(repo, '_blank')}>View Repo</JButton>
+        <JButton onClick={() => window.open(live, '_blank')}>View Live</JButton>
       </div>
     </div>
   )

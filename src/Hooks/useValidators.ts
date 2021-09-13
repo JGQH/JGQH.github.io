@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export type TriBool = boolean | undefined
+export type TriBool = boolean | 'unknown'
 
 /* VALIDATION HOOKS */
 function useValidator(validatorFunction:(text: string) => TriBool, initialValue:string) {
@@ -13,7 +13,7 @@ function useValidator(validatorFunction:(text: string) => TriBool, initialValue:
 
 export function useEmailValidator() {
   function validateEmail(email:string):TriBool {
-    if(email === '') return undefined
+    if(email === '') return 'unknown'
 
     const pattern = /^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9.-]+)\.([a-z.]{2,6})$/
     return !(email.match(pattern) == null) //False if null | undefined, true otherwise
@@ -24,7 +24,7 @@ export function useEmailValidator() {
 
 export function useTextValidator() {
   function validateText(text:string):TriBool {
-    if(text === '') return undefined
+    if(text === '') return 'unknown'
     
     return text.trim().length > 0
   }
