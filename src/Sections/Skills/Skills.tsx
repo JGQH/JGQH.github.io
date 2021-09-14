@@ -14,6 +14,7 @@ const Skills = ({ reference }:SectionProps) => {
         <Skill skillName='CSS' />
         <Skill skillName='SASS' />
         <Skill skillName='JavaScript' />
+        <Skill skillName='TypeScript' />
         <Skill skillName='React JS' />
         <Skill skillName='Next JS' />
         <Skill skillName='Node JS' />

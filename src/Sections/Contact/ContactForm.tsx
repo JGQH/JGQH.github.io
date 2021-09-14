@@ -12,7 +12,7 @@ export default function ContactForm() {
   const [email, isEmailValid, setEmail] = useEmailValidator()
   const [message, isMessageValid, setMessage] = useTextValidator()
 
-  const submitDisabled = (state === 'DONE') || !(isEmailValid && isNameValid && isMessageValid)
+  const submitDisabled = (state === 'DONE') || !((isEmailValid === true) && (isNameValid === true) && (isMessageValid === true))
   
   return (
     <form onSubmit={e => e.preventDefault()} className='contact-form'>

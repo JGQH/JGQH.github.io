@@ -32,8 +32,8 @@ const ProjectsList:ProjectObject[] = [
   },
   {
     name: 'Portfolio',
-    description: 'Showcase of my developer skills, created using Vite',
-    technologies: ['HTML', 'SASS', 'React JS'],
+    description: 'Showcase of my developer skills, created using Vite and TypeScript',
+    technologies: ['HTML', 'SASS', 'React JS', 'TypeScript'],
     repo: 'https://github.com/JGQH/JGQH.github.io',
     live: 'https://jgqh.github.io/'
   }

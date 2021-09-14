@@ -49,15 +49,6 @@
   .contact-media {
     justify-self: center;
     align-self: center;
-
-    .stack-svg {
-      cursor: pointer;
-      transition: all .25s;
-
-      &:hover {
-        filter: brightness(1.25);
-      }
-    }
   }
 
   .contact-form {

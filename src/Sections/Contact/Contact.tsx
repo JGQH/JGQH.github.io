@@ -17,7 +17,9 @@ const Contact = ({ reference }:SectionProps) => {
       </div>
       <ContactForm />
       <div className='contact-media'>
-        <StackSvg name='Github' onClick={() => window.open(GithubProfile, '_blank')} />
+        <a href={GithubProfile} target='_blank'>
+          <StackSvg name='Github' />
+        </a>
       </div>
     </div>
   )
