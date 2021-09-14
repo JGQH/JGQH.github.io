@@ -32,38 +32,22 @@ export function useTextValidator() {
   return useValidator(validateText, '')
 }
 
-/* SUBMITION HOOKS */
-type SubmitState = 'IDLE'|'LOADING'|'DONE'|'ERROR'
+/* SUBMIT FUNCTION */
+export async function sendForm(name:string, email:string, message:string) {
+  const smtpBackend = import.meta.env.VITE_SMTP_URL as string
 
-export function useSubmitter() {
-  const [state, setState] = useState<SubmitState>('IDLE');
+  const response = await fetch(smtpBackend, {
+    method: 'POST',
+    body: JSON.stringify({
+      id: import.meta.env.VITE_SMTP_ID,
+      name: name,
+      email: email,
+      message: message
+    }),
+    headers: {'Content-type': 'application/json; charset=UTF-8'}
+  })
 
-  async function doSubmit(name:string, email:string, message:string) {
-    setState('LOADING')
+  const data:{ success: boolean } = await response.json()
 
-    try {
-      const smtpBackend = import.meta.env.VITE_SMTP_URL as string
-
-      const response = await fetch(smtpBackend, {
-        method: 'POST',
-        body: JSON.stringify({
-          id: import.meta.env.VITE_SMTP_ID,
-          name: name,
-          email: email,
-          message: message
-        }),
-        headers: {'Content-type': 'application/json; charset=UTF-8'}
-      })
-
-      const data:{ success: boolean } = await response.json()
-
-      if(!data.success) throw new Error()
-
-      setState('DONE')
-    } catch (error) {
-      setState('ERROR')
-    }
-  }
-
-  return [ state, doSubmit ] as const
+  if(!data.success) throw new Error()
 }
