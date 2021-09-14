@@ -6,7 +6,7 @@ import type { StackName } from '@Types'
 import type { SectionProps } from '@Hooks/useDivRef'
 import './projects.scss'
 
-interface ProjectObject {
+export interface ProjectObject {
   name: string
   description: string
   technologies: StackName[]
