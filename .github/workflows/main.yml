@@ -23,6 +23,8 @@ jobs:
           npm install
           npm run-script build
         env:
+          VITE_PROJECTS_ID: ${{ secrets.VITE_PROJECTS_ID }}
+          VITE_PROJECTS_URL: ${{ secrets.VITE_PROJECTS_URL }}
           VITE_SMTP_URL: ${{ secrets.VITE_SMTP_URL }}
           VITE_SMTP_ID: ${{ secrets.VITE_SMTP_ID }}
 
