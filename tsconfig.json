@@ -32,7 +32,8 @@
         "Hooks/*"
       ],
       "@Components/*":[
-        "Components/StackSvg/*"
+        "Components/StackSvg/*",
+        "Components/JButton/*"
       ]
     }
   },
