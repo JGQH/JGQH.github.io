@@ -1,7 +1,7 @@
 import React from 'react'
 import StackSvg from '@Components/StackSvg'
 import JButton from '@Components/JButton'
-import { ProjectObject } from './ProjectList'
+import type { ProjectObject } from './Projects'
 
 export default function Project({ name, description, technologies, repo, live }:ProjectObject) {
   return (
