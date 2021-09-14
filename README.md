@@ -1,7 +1,7 @@
 # Portfolio
 > English not my first language
 
-Simple portfolio website
+Personal portfolio website
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -10,13 +10,14 @@ Simple portfolio website
 - [To-Do](#to-do)
 
 ## Introduction
-This project is my portfolio, to show my developer skills.
+This project is my portfolio, to show my developer skills. Its built with React using TypeScript, Vite, and SASS.
 
 ## Technologies
-- NodeJS v16.4.2
+- [Vite](https://vitejs.dev/) v2.5.6
+- [TypeScript](https://www.typescriptlang.org/) v4.4.3
+- [SASS](https://sass-lang.com/) v1.39.2
 
 ## Illustrations
 ![Portfolio](./public/Images/Portfolio.png)
 
 ## To-Do
-- Add new projects
