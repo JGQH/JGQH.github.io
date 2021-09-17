@@ -15,8 +15,8 @@ export default function Navref ({ reference, name }:NavrefProps) {
   }
 
   return (
-    <div className='navbar-ref' onClick={doScroll}>
+    <button className='navbar-ref' onClick={doScroll}>
       {name}
-    </div>
+    </button>
   )
 }
