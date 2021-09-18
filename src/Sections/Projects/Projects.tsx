@@ -21,9 +21,7 @@ export default function Projects({ reference }:SectionProps) {
     return await (await fetch(url)).json()
   })
 
-  useCallWhenInViewport(reference, () => {
-    execute()
-  })
+  useCallWhenInViewport(reference, execute)
 
   return (
     <div className='port-section section-projects' ref={reference}>

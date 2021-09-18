@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
-import { RefDivObject } from './useDivRef'
+import { RefObject, useEffect } from 'react'
 
-export default function useCallWhenInViewport(reference:RefDivObject, callback:() => void) {
+export default function useCallWhenInViewport(reference:RefObject<HTMLElement>, callback:() => void) {
   useEffect(() => {
     const divElement = reference.current
 

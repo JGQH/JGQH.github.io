@@ -1,10 +1,11 @@
 @use 'src/utilities' as *;
 
-.stack-svg {
+.component-jsvg {
   width: 3em;
+  height: 3em;
   transition: all .25s;
 
-  &:hover {
+  &:hover{
     filter: brightness(1.25);
   }
 }

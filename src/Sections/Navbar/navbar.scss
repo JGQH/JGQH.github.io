@@ -1,48 +1,82 @@
 @use 'src/utilities' as *;
 
 .port-navbar {
-    position: sticky;
-    width: 100%;
-    overflow-x: auto;
-    top: 0;
-    height: var(--navbar-height);
+  position: sticky;
+  width: 100%;
+  overflow-x: auto;
+  top: 0;
+  height: var(--navbar-height);
+  font-size: .75rem;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  @include medium {
+    --navbar-height: 4rem;
+    font-size: 1rem;
+  }
+  @include x-large{
+    --navbar-height: 5rem;
+    font-size: 1.5rem;
+  }
 
-    @media only screen and (max-width: 599px) {
-        justify-content: flex-start;
-        .navbar-ref:not(:last-child) {
-            margin-right: 3rem;
-        }
-    }
-    @include small {
-        justify-content: space-around;
-    }
-    @include medium {
-        --navbar-height: 4rem;
-        font-size: 2rem;
-    }
-    @include x-large{
-        --navbar-height: 5rem;
-    }
+  background-color: getColor(0);
 
+  .navbar-ref {
+    height: 100%;
+    flex-basis: 20%;
+    font-size: 1em;
+
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    position: relative;
+    color: getColor(-1);
     background-color: getColor(0);
 
-    .navbar-ref {
-        padding: .5rem;
-        cursor: pointer;
-        color: getColor(-1);
-        border: 2px solid getColor(-1);
-        outline: 2px solid getColor(-1);
-        outline-offset: -2px;
+    &::before, &::after {
+      content: "";
+      
+      position: absolute;
+      transition: all .25s ease-in-out;
+      border: 2px solid getColor(-1);
 
-        transition: outline-offset .1s;
-
-        &:hover {
-            outline-offset: 1px;
-            outline: 1px solid getColor(-1);
-        }
+      width: 0;
+      height: 80%;
+      top: 10%;
     }
+
+    &::before {
+      border-left: none;
+      right: 0;
+    }
+
+    &::after {
+      border-right: none;
+      left: 0;
+    }
+
+    &:hover {
+      &::before, &::after {
+        width: 35%;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      &::before {
+        border-radius: 0 1rem 1rem 0;
+        right: 15%;
+      }
+
+      &::after {
+        border-radius: 1rem 0 0 1rem;
+        left: 15%;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      text-decoration: underline;
+    }
+  }
 }
