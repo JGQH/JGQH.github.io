@@ -33,7 +33,8 @@
       ],
       "@Components/*":[
         "Components/StackSvg/*",
-        "Components/JButton/*"
+        "Components/JButton/*",
+        "Components/JLoader/*"
       ]
     }
   },

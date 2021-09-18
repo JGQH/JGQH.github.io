@@ -21,3 +21,5 @@ This project is my portfolio, to show my developer skills. Its built with React 
 ![Portfolio](./public/Images/Portfolio.png)
 
 ## To-Do
+- Link skill list to API
+- Store all images somewhere else

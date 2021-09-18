@@ -1,0 +1,63 @@
+@use 'src/utilities' as *;
+
+.component-jloader {
+  position: relative;
+  aspect-ratio: 1;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: getColor(-1);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    animation: square-tl 2s linear infinite;
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+    animation: square-br 2s linear infinite;
+  }
+}
+
+@keyframes square-tl {
+  25% {
+    top: 0;
+    left: 50%
+  }
+  50% {
+    top: 50%;
+    left: 50%
+  }
+  75% {
+    top: 50%;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0
+  }
+}
+@keyframes square-br {
+  25% {
+    bottom: 0;
+    right: 50%
+  }
+  50% {
+    bottom: 50%;
+    right: 50%
+  }
+  75% {
+    bottom: 50%;
+    right: 0;
+  }
+  100% {
+    bottom: 0;
+    right: 0
+  }
+}
