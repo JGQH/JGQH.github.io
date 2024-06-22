@@ -10,7 +10,7 @@ const { data: { see_more }  } = await getEntry('texts', Astro.currentLocale)
 const { onlyRelevants = true } = Astro.props
 
 const locale = Astro.currentLocale ?? 'es'
-const projects = await getCollection('projects', (project: ProjectEntry) => (project.slug.split('/')[0] === locale) && (!onlyRelevants || project.data.relevant))
+const projects = (await getCollection('projects', (project: ProjectEntry) => (project.slug.split('/')[0] === locale) && (!onlyRelevants || project.data.relevant)))
                     .map((project: ProjectEntry) => ({
                       ...project.data,
                       slug: project.slug,

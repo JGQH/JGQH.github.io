@@ -5,7 +5,7 @@ import { getCollection, getEntry } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 import locales from '@Utilidades/locales'
 
-type SectionEntry = CollectionEntry<'section'>
+type SectionEntry = CollectionEntry<'sections'>
 
 export async function getStaticPaths() {
 	return locales.map(locale => ({
@@ -13,8 +13,9 @@ export async function getStaticPaths() {
 	}))
 }
 
-const { data: { banner } } = (await getEntry('texts', Astro.currentLocale))
-const sections = (await getCollection('sections', (section: SectionEntry) => section.slug.split('/')[0] === Astro.currentLocale))
+const locale = Astro.currentLocale ?? 'es'
+const { data: { banner } } = (await getEntry('texts', locale))
+const sections = (await getCollection('sections', (section: SectionEntry) => section.slug.split('/')[0] === locale))
 										.sort((a: SectionEntry, b: SectionEntry) => a.data.index - b.data.index)
 										.map((section: SectionEntry) => ({
 											name: section.data.name,
