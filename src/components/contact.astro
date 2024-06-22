@@ -1,0 +1,43 @@
+---
+import { getEntry } from 'astro:content'
+
+const { data: { copy } } = await getEntry('texts', Astro.currentLocale)
+const email = "juan.quispe.8n1y8@slmail.me"
+---
+<div class="flex">
+  <p class="p-2 border border-black dark:border-white rounded-l">{email}</p>
+  <astro-email data-email={email}>
+    <button class="p-2 border transition-colors bg-white hover:bg-black hover:text-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black border-l-0 border-black dark:border-white rounded-r">{copy}</button>
+  </astro-email>
+</div>
+<script is:inline>
+  class AstroEmail extends HTMLElement {
+    connectedCallback() {
+      let enabled = true
+      const email = this.dataset.email
+      const button = this.querySelector('button')
+
+      async function handleClick() {
+        if (enabled) {
+          try {
+            await navigator.clipboard.writeText(email)
+
+            button.innerText = "Copiado!"
+            enabled = false
+
+            setTimeout(() => {
+              button.innerText = "Copiar"
+              enabled = true
+            }, 750)
+          } catch(e) {
+            
+          }
+        }
+      }
+
+      button.addEventListener('click', handleClick)
+    }
+  }
+
+  customElements.define('astro-email', AstroEmail)
+</script>

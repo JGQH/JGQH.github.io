@@ -1,0 +1,36 @@
+---
+import Navbar from '@Componentes/navbar.astro'
+import locales from '@Utilidades/locales'
+
+import { ViewTransitions } from 'astro:transitions'
+import '@fontsource/spectral-sc'
+import '@fontsource/alegreya-sans'
+
+interface Props {
+	title: string,
+	sections: {
+		id: string,
+		name: string
+	}[]
+}
+
+const { title, sections } = Astro.props;
+---
+<!doctype html>
+<html class="w-svw font-sans text-xl" lang={Astro.currentLocale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="max-w-[1280px] mx-auto transition-colors dark:text-white dark:bg-black">
+		<Navbar sections={sections} transition:animate="none" />
+		<main class="flex flex-col p-4 pt-0 gap-4">
+			<slot />
+		</main>
+	</body>
+</html>

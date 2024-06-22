@@ -1,0 +1,45 @@
+---
+import { getCollection, getEntries } from 'astro:content'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import locales from '@Utilidades/locales'
+import Layout from '@Layouts/Layout.astro'
+import Section from '@Componentes/section.astro'
+
+export async function getStaticPaths() {
+  return locales.map(locale => ({
+    params: { lang: locale }
+  }))
+}
+
+const projects = (await getCollection('projects', project => project.slug.split('/')[0] === Astro.currentLocale))
+                    .map(project => ({
+                      ...project.data,
+                      slug: project.slug,
+                      render: project.render
+                    }))
+---
+<Layout title="Projects" sections={[{ name: "Inicio", url: "/" }]}>
+  <Section name="Proyectos Relevantes">
+    {projects.filter(project => project.relevant)
+      .map(async project => {
+        const tech = (await getEntries(project.tech)).map(tech => tech.data.name)
+        const transitionName = "project#" + project.slug
+        const { Content } = await project.render()
+      
+        return <div>
+          <div transition:name={transitionName} transition:animate="initial">
+            {project.name ? <span class="font-bold">{project.name}: </span> : ""}
+            <span>{project.explanation}</span>
+          </div>
+          <Content />
+          <div>
+            {JSON.stringify(tech)}
+          </div>
+        </div>
+      })
+    }
+  </Section>
+  <Section name="Otros proyectos">
+    {JSON.stringify(projects.filter(project => !project.relevant))}
+  </Section>
+</Layout>

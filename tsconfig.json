@@ -1,0 +1,13 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@Componentes/*": [ "src/components/*" ],
+      "@Layouts/*": [ "src/layouts/*" ],
+      "@Utilidades/*": [ "src/utilities/*" ],
+      "@Assets/*" : [ "src/assets/*" ]
+    }
+  }
+}
