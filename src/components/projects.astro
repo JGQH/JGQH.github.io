@@ -1,22 +1,25 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getCollection, getEntries, getEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+
+type ProjectEntry = CollectionEntry<'projects'>
+type TechEntry = CollectionEntry<'tech'>
 
 const { data: { see_more }  } = await getEntry('texts', Astro.currentLocale)
-
 const { onlyRelevants = true } = Astro.props
 
-const projects = (await getCollection('projects'))
-                    .filter(project => (project.slug.split('/')[0] === Astro.currentLocale) && (!onlyRelevants || project.data.relevant))
-                    .map(project => ({
+const locale = Astro.currentLocale ?? 'es'
+const projects = await getCollection('projects', (project: ProjectEntry) => (project.slug.split('/')[0] === locale) && (!onlyRelevants || project.data.relevant))
+                    .map((project: ProjectEntry) => ({
                       ...project.data,
                       slug: project.slug,
                       render: project.render
                     }))
 ---
 <div class="grid grid-cols-2">
-  {projects.map(async project => {
-    const tech = (await getEntries(project.tech)).map(tech => tech.data.name)
+  {projects.map(async (project: ProjectEntry) => {
+    const tech = (await getEntries(project.tech)).map((tech: TechEntry) => tech.data.name)
     const transitionName = "project#" + project.slug
     const { Content } = await project.render()
     
@@ -33,5 +36,5 @@ const projects = (await getCollection('projects'))
   })}
 </div>
 <div class="flex align-center">
-  <a type="button" href={getRelativeLocaleUrl(Astro.currentLocale, 'projects')} class="mx-auto rounded transition-colors border border-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white p-2">{see_more}</a>
+  <a type="button" href={getRelativeLocaleUrl(locale, 'projects')} class="mx-auto rounded transition-colors border border-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white p-2">{see_more}</a>
 </div>

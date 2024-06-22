@@ -2,7 +2,10 @@
 import Layout from '@Layouts/Layout.astro'
 import Section from '@Componentes/section.astro'
 import { getCollection, getEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import locales from '@Utilidades/locales'
+
+type SectionEntry = CollectionEntry<'section'>
 
 export async function getStaticPaths() {
 	return locales.map(locale => ({
@@ -11,9 +14,9 @@ export async function getStaticPaths() {
 }
 
 const { data: { banner } } = (await getEntry('texts', Astro.currentLocale))
-const sections = (await getCollection('sections', section => section.slug.split('/')[0] === Astro.currentLocale))
-										.sort((a, b) => a.data.index - b.data.index)
-										.map(section => ({
+const sections = (await getCollection('sections', (section: SectionEntry) => section.slug.split('/')[0] === Astro.currentLocale))
+										.sort((a: SectionEntry, b: SectionEntry) => a.data.index - b.data.index)
+										.map((section: SectionEntry) => ({
 											name: section.data.name,
 											id: section.slug.split('/')[1],
 											url: "#" + section.slug.split('/')[1],
@@ -21,9 +24,9 @@ const sections = (await getCollection('sections', section => section.slug.split(
 											render: section.render
 										}))
 ---
-<Layout title="Portfolio - Juan Quispe" sections={sections.filter(section => section.indexed)}>
+<Layout title="Portfolio - Juan Quispe" sections={sections.filter((section: SectionEntry) => section.indexed)}>
 	<h1 class="text-4xl text-center py-10">{banner}</h1>
-	{sections.map(async section => {
+	{sections.map(async (section: SectionEntry) => {
 		const { Content } = await section.render()
 
 		return <Section id={section.id} name={section.name}>

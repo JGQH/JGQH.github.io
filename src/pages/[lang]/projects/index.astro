@@ -1,9 +1,12 @@
 ---
 import { getCollection, getEntries } from 'astro:content'
-import { getRelativeLocaleUrl } from 'astro:i18n'
+import type { CollectionEntry } from 'astro:content'
 import locales from '@Utilidades/locales'
 import Layout from '@Layouts/Layout.astro'
 import Section from '@Componentes/section.astro'
+
+type ProjectEntry = CollectionEntry<'projects'>
+type TechEntry = CollectionEntry<'tech'>
 
 export async function getStaticPaths() {
   return locales.map(locale => ({
@@ -11,8 +14,8 @@ export async function getStaticPaths() {
   }))
 }
 
-const projects = (await getCollection('projects', project => project.slug.split('/')[0] === Astro.currentLocale))
-                    .map(project => ({
+const projects = (await getCollection('projects', (project: ProjectEntry) => project.slug.split('/')[0] === Astro.currentLocale))
+                    .map((project: ProjectEntry) => ({
                       ...project.data,
                       slug: project.slug,
                       render: project.render
@@ -20,9 +23,9 @@ const projects = (await getCollection('projects', project => project.slug.split(
 ---
 <Layout title="Projects" sections={[{ name: "Inicio", url: "/" }]}>
   <Section name="Proyectos Relevantes">
-    {projects.filter(project => project.relevant)
-      .map(async project => {
-        const tech = (await getEntries(project.tech)).map(tech => tech.data.name)
+    {projects.filter((project: ProjectEntry) => project.relevant)
+      .map(async (project: ProjectEntry) => {
+        const tech = (await getEntries(project.tech)).map((tech: TechEntry) => tech.data.name)
         const transitionName = "project#" + project.slug
         const { Content } = await project.render()
       
@@ -40,6 +43,6 @@ const projects = (await getCollection('projects', project => project.slug.split(
     }
   </Section>
   <Section name="Otros proyectos">
-    {JSON.stringify(projects.filter(project => !project.relevant))}
+    {JSON.stringify(projects.filter((project: ProjectEntry) => !project.relevant))}
   </Section>
 </Layout>

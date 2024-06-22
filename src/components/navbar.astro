@@ -11,7 +11,8 @@ interface Props {
 }
 
 const { sections } = Astro.props
-const themeText = (await getEntry('texts', Astro.currentLocale)).data.theme
+const locale = Astro.currentLocale ?? 'es'
+const themeText = (await getEntry('texts', locale)).data.theme
 ---
 <nav class="flex flex-row">
   <div class="flex items-center pl-4 [&>svg]:size-10">
@@ -20,7 +21,7 @@ const themeText = (await getEntry('texts', Astro.currentLocale)).data.theme
   <p class="grow font-serif font-bold p-4">Juan G. Quispe H.</p>
   <div class="shrink flex flex-row pr-4">
     {sections.map(section => (
-      <a class="p-4 hover:bg-slate-100 dark:hover:bg-slate-900" href={getRelativeLocaleUrl(Astro.currentLocale, section.url)}>{section.name}</a>
+      <a class="p-4 hover:bg-slate-100 dark:hover:bg-slate-900" href={getRelativeLocaleUrl(locale, section.url)}>{section.name}</a>
     ))}
     <astro-theme>
       <button class="h-full px-4 py-1 hover:bg-slate-100 dark:hover:bg-slate-900">

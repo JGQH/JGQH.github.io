@@ -1,6 +1,5 @@
 ---
 import Navbar from '@Componentes/navbar.astro'
-import locales from '@Utilidades/locales'
 
 import { ViewTransitions } from 'astro:transitions'
 import '@fontsource/spectral-sc'
@@ -9,7 +8,7 @@ import '@fontsource/alegreya-sans'
 interface Props {
 	title: string,
 	sections: {
-		id: string,
+		url: string,
 		name: string
 	}[]
 }
